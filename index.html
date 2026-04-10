@@ -1186,32 +1186,34 @@
     <div class="code-block" style="font-size:11px;line-height:1.55;">
 <span class="cm">// Reasoner output — structured, not freeform</span>
 {
-  <span class="str">"summary"</span>: <span class="str">"Strip steak baskets avg $471 on typical</span>
-    <span class="str">days, dropping to $123 during flash sales."</span>,
+  <span class="str">"summary"</span>: <span class="str">"During the strip steak flash sale</span>
+    <span class="str">at Long Grove, avg basket value dropped from</span>
+    <span class="str">$109.25 to $72.83, basket size from 15 to 10."</span>,
 
   <span class="str">"insights"</span>: [
     {
-      <span class="str">"finding"</span>: <span class="str">"Flash sale baskets are 74% smaller"</span>,
-      <span class="str">"evidence"</span>: <span class="str">"$471 typical vs $123 flash sale,</span>
-        <span class="str">107 units vs 26 units"</span>,
-      <span class="str">"significance"</span>: <span class="str">"Sale attracts focused,</span>
-        <span class="str">price-driven trips, not stock-up shops"</span>,
+      <span class="str">"finding"</span>: <span class="str">"Avg basket value fell 33%</span>
+        <span class="str">during the flash sale"</span>,
+      <span class="str">"evidence"</span>: <span class="str">"Baseline $109.25 (164 baskets)</span>
+        <span class="str">vs promo $72.83 (40 baskets)"</span>,
+      <span class="str">"significance"</span>: <span class="str">"Promo attracted more</span>
+        <span class="str">price-sensitive, focused shoppers"</span>,
       <span class="str">"answers_question"</span>: <span class="kw">true</span>
     },
     {
-      <span class="str">"finding"</span>: <span class="str">"Strip steak lifts basket value</span>
-        <span class="str">vs control — especially during promos"</span>,
-      <span class="str">"evidence"</span>: <span class="str">"Flash sale: $123 vs $78 control</span>
-        <span class="str">(+58% lift)"</span>,
-      <span class="str">"significance"</span>: <span class="str">"Strip steak works as a basket</span>
-        <span class="str">builder even at promotional prices"</span>,
+      <span class="str">"finding"</span>: <span class="str">"Meat dept margin rate tripled</span>
+        <span class="str">despite lower daily sales"</span>,
+      <span class="str">"evidence"</span>: <span class="str">"Margin: 1.37% → 4.55% (+232%)</span>
+        <span class="str">Sales: $4,502 → $4,118/day"</span>,
+      <span class="str">"significance"</span>: <span class="str">"Promo reduced volume but</span>
+        <span class="str">dramatically improved margin rate"</span>,
       <span class="str">"answers_question"</span>: <span class="kw">true</span>
     }
   ],
 
-  <span class="str">"confidence"</span>: <span class="str">"high"</span>,
-  <span class="str">"confidence_rationale"</span>: <span class="str">"Large sample sizes,</span>
-    <span class="str">direct basket-level data, 18K+ transactions"</span>
+  <span class="str">"confidence"</span>: <span class="str">"medium"</span>,
+  <span class="str">"confidence_rationale"</span>: <span class="str">"Directionally clear,</span>
+    <span class="str">but 3-day promo (40 baskets) limits robustness"</span>
 }
     </div>
   </div>
@@ -1270,13 +1272,13 @@
     <div style="background:white;border-radius:14px;overflow:hidden;border:0.5px solid var(--line-strong);">
       <div style="padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;">
         <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;color:var(--ink-muted);">REASONER OUTPUT — STRIP STEAK ANALYSIS</div>
-        <div style="font-family:'DM Mono',monospace;font-size:11px;color:#0f6e56;">CONFIDENCE: HIGH</div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;color:#854f0b;">CONFIDENCE: MEDIUM</div>
       </div>
 
       <!-- Summary -->
       <div style="padding:16px 20px;border-bottom:1px solid var(--line);">
         <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--ink);line-height:1.4;margin-bottom:6px;">
-          Strip steak baskets average $471 and 107 units on typical days. During the Long Grove flash sale, they drop to $123 and 26 units — but they still outperform control baskets by 58%.
+          During the strip steak flash sale at Long Grove (Jan 30–Feb 1), average basket value dropped from $109.25 to $72.83 and basket size from 15 to 10 units. Meat department margin rate more than tripled despite slightly lower daily sales.
         </div>
       </div>
 
@@ -1294,28 +1296,16 @@
           </thead>
           <tbody>
             <tr style="border-bottom:0.5px solid var(--line);">
-              <td style="padding:8px;color:var(--ink-soft);">Strip steak — typical</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink);font-weight:500;">$471.08</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink);">107.3</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">18,210</td>
+              <td style="padding:8px;color:var(--ink-soft);">Strip steak — baseline</td>
+              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink);font-weight:500;">$109.25</td>
+              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink);">15</td>
+              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">164</td>
             </tr>
             <tr style="border-bottom:0.5px solid var(--line);background:rgba(201,79,30,0.04);">
               <td style="padding:8px;color:var(--ember);font-weight:500;">Strip steak — flash sale</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ember);font-weight:500;">$123.34</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ember);">26.3</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">213</td>
-            </tr>
-            <tr style="border-bottom:0.5px solid var(--line);">
-              <td style="padding:8px;color:var(--ink-muted);font-style:italic;">Control — typical</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">$466.69</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">107.8</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">2,000</td>
-            </tr>
-            <tr>
-              <td style="padding:8px;color:var(--ink-muted);font-style:italic;">Control — flash sale</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">$78.19</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">19.0</td>
-              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">2,000</td>
+              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ember);font-weight:500;">$72.83</td>
+              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ember);">10</td>
+              <td style="text-align:right;padding:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-muted);">40</td>
             </tr>
           </tbody>
         </table>
@@ -1323,19 +1313,19 @@
 
       <!-- Store impact -->
       <div style="padding:16px 20px;">
-        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-muted);margin-bottom:10px;">LONG GROVE — 3-DAY FLASH SALE IMPACT</div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-muted);margin-bottom:10px;">MEAT DEPT — DAILY AVG (BASELINE → PROMO)</div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
           <div style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">$204K</div>
-            <div style="font-size:11px;color:var(--ink-muted);">Store sales</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">$4,118</div>
+            <div style="font-size:11px;color:var(--ink-muted);">Daily sales (−8.5%)</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">$26.2K</div>
-            <div style="font-size:11px;color:var(--ink-muted);">Meat dept sales</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);">409</div>
+            <div style="font-size:11px;color:var(--ink-muted);">Daily units (−11.7%)</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--sage);">$94.8K</div>
-            <div style="font-size:11px;color:var(--ink-muted);">Gross margin</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:22px;color:var(--sage);">4.55%</div>
+            <div style="font-size:11px;color:var(--ink-muted);">Margin rate (+232%)</div>
           </div>
         </div>
       </div>
