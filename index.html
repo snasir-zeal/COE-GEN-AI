@@ -49,12 +49,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 72px;
+    padding: 80px 60px;
     position: relative;
     overflow: hidden;
   }
-  .slide--compact { padding: 48px 48px; }
-  .slide--semi-compact { padding: 60px 48px; }
+  .slide--compact { padding: 48px 60px; }
+  .slide--semi-compact { padding: 60px 60px; }
 
   /* ── TYPOGRAPHY ── */
   .slide-eyebrow {
@@ -191,7 +191,7 @@
   .slide-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 56px;
+    gap: 40px;
     align-items: center;
   }
   .slide-split-left {
@@ -205,6 +205,7 @@
     justify-content: center;
     align-items: center;
   }
+  .slide-split--wide-right { grid-template-columns: 1fr 1.4fr; }
 
   /* ── HERO ── */
   .slide-hero {
@@ -227,7 +228,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: -80px -72px -96px 0;
+    margin: -80px -60px -96px 0;
     overflow: visible;
   }
   .hero-grid {
@@ -372,6 +373,7 @@
     line-height: 1.6;
     color: #d4d4d4;
     overflow-x: auto;
+    white-space: pre-wrap;
     border: 0.5px solid rgba(255,255,255,0.08);
   }
   .code-block .kw { color: #569cd6; }
@@ -410,7 +412,8 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .slide { padding: 60px 28px; }
-    .slide--compact { padding: 40px 24px; }
+    .slide--compact { padding: 40px 28px; }
+    .slide-split--wide-right { grid-template-columns: 1fr; }
     .slide-split { grid-template-columns: 1fr; gap: 32px; }
     .comparison-grid { grid-template-columns: 1fr; }
     .cta-grid { grid-template-columns: 1fr; }
@@ -557,54 +560,60 @@
   <h2 class="slide-title reveal reveal-d1" style="max-width:840px;">
     LLMs do <em>language.</em><br>Python does <em>logic.</em><br>SQL does <em>data.</em>
   </h2>
-  <p class="slide-body reveal reveal-d2" style="margin-bottom:36px;max-width:680px;">
+  <p class="slide-body reveal reveal-d2" style="margin-bottom:24px;max-width:680px;">
     Use each tool where it's strongest. LLMs are exceptional at planning, classification, natural language parsing, and reasoning. They're terrible at orchestration, calculation, SQL generation, and deterministic workflows. So don't ask them to do those things.
   </p>
 
-  <div class="reveal reveal-d3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line-strong);border:0.5px solid var(--line-strong);border-radius:10px;overflow:hidden;max-width:960px;">
+  <div class="reveal reveal-d3" style="display:flex;gap:20px;align-items:stretch;max-width:1100px;">
 
-    <!-- LLMs -->
-    <div style="background:var(--paper);padding:28px 24px;">
-      <div style="width:40px;height:40px;border-radius:10px;background:#eeedfe;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#534ab7" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+    <!-- Three cards grid -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line-strong);border:0.5px solid var(--line-strong);border-radius:10px;overflow:hidden;flex:1;min-width:0;">
+
+      <!-- LLMs -->
+      <div style="background:var(--paper);padding:22px 20px;">
+        <div style="width:36px;height:36px;border-radius:8px;background:#eeedfe;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#534ab7" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+        </div>
+        <div style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink);margin-bottom:6px;">LLMs</div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:#534ab7;margin-bottom:8px;">WHAT THEY'RE GOOD AT</div>
+        <div style="font-size:13px;color:var(--ink-soft);line-height:1.55;">
+          Intent classification. Slice planning — decomposing a complex question into structured sub-queries. Natural language reasoning over computed results. Synthesizing insights from data.
+        </div>
       </div>
-      <div style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);margin-bottom:8px;">LLMs</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#534ab7;margin-bottom:10px;">WHAT THEY'RE GOOD AT</div>
-      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-        Intent classification. Slice planning — decomposing a complex question into structured sub-queries. Natural language reasoning over computed results. Synthesizing insights from data.
+
+      <!-- Python -->
+      <div style="background:var(--paper);padding:22px 20px;">
+        <div style="width:36px;height:36px;border-radius:8px;background:#e1f5ee;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f6e56" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h5"/></svg>
+        </div>
+        <div style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink);margin-bottom:6px;">Python</div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:#0f6e56;margin-bottom:8px;">WHAT CODE IS GOOD AT</div>
+        <div style="font-size:13px;color:var(--ink-soft);line-height:1.55;">
+          Orchestration. Workflow control. Semantic resolution via fuzzy matching. Query building from templates. Calculations — elasticity, lift, cannibalization. Retry logic. Error handling.
+        </div>
+      </div>
+
+      <!-- SQL -->
+      <div style="background:var(--paper);padding:22px 20px;">
+        <div style="width:36px;height:36px;border-radius:8px;background:#fdf3e3;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#854f0b" stroke-width="1.5"><ellipse cx="12" cy="7" rx="8" ry="4"/><path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7"/><path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4"/></svg>
+        </div>
+        <div style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink);margin-bottom:6px;">SQL</div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.08em;color:#854f0b;margin-bottom:8px;">WHAT DATA ENGINES ARE GOOD AT</div>
+        <div style="font-size:13px;color:var(--ink-soft);line-height:1.55;">
+          Data retrieval. Aggregation. Filtering. Joining. The actual heavy lifting. Templated queries ensure correct, performant SQL every time — no hallucinated column names.
+        </div>
       </div>
     </div>
 
-    <!-- Python -->
-    <div style="background:var(--paper);padding:28px 24px;">
-      <div style="width:40px;height:40px;border-radius:10px;background:#e1f5ee;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f6e56" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h5"/></svg>
-      </div>
-      <div style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);margin-bottom:8px;">Python</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#0f6e56;margin-bottom:10px;">WHAT CODE IS GOOD AT</div>
-      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-        Orchestration. Workflow control. Semantic resolution via fuzzy matching. Query building from templates. Calculations — elasticity, lift, cannibalization. Retry logic. Error handling.
+    <!-- The Rule — right side -->
+    <div class="callout reveal reveal-d4" style="border-left-color:var(--sage);flex:0 0 280px;margin-top:0;display:flex;flex-direction:column;justify-content:center;">
+      <div class="callout-label">The rule</div>
+      <div class="callout-text" style="font-size:15px;">
+        If Python can do it deterministically, <strong>don't give it to an LLM.</strong> If a SQL template can generate the query, <strong>don't let the model write SQL.</strong> Reserve LLM calls for what only language models can do: understanding ambiguity, planning approaches, and reasoning over results.
       </div>
     </div>
 
-    <!-- SQL -->
-    <div style="background:var(--paper);padding:28px 24px;">
-      <div style="width:40px;height:40px;border-radius:10px;background:#fdf3e3;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#854f0b" stroke-width="1.5"><ellipse cx="12" cy="7" rx="8" ry="4"/><path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7"/><path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4"/></svg>
-      </div>
-      <div style="font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);margin-bottom:8px;">SQL</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#854f0b;margin-bottom:10px;">WHAT DATA ENGINES ARE GOOD AT</div>
-      <div style="font-size:14px;color:var(--ink-soft);line-height:1.6;">
-        Data retrieval. Aggregation. Filtering. Joining. The actual heavy lifting. Templated queries ensure correct, performant SQL every time — no hallucinated column names.
-      </div>
-    </div>
-  </div>
-
-  <div class="callout reveal reveal-d4" style="margin-top:32px;border-left-color:var(--sage);max-width:820px;">
-    <div class="callout-label">The rule</div>
-    <div class="callout-text">
-      If Python can do it deterministically, <strong>don't give it to an LLM.</strong> If a SQL template can generate the query, <strong>don't let the model write SQL.</strong> Reserve LLM calls for what only language models can do: understanding ambiguity, planning approaches, and reasoning over results.
-    </div>
   </div>
 </section>
 
@@ -813,7 +822,7 @@
      SLIDE 6 — WORKFLOWSTATE
      ═══════════════════════════════════════════════════════ -->
 <section class="slide slide--semi-compact" data-slide="6">
-  <div class="slide-split" style="gap:40px;">
+  <div class="slide-split">
     <div class="slide-split-left">
       <div class="slide-eyebrow reveal" style="color:var(--sage)">
         The spine of the system
@@ -854,36 +863,16 @@
     <div class="slide-split-right reveal reveal-d2" style="align-items:stretch;align-self:stretch;">
       <div class="code-block" style="width:100%;max-width:480px;">
 <span class="kw">class</span> <span class="type">WorkflowState</span>(<span class="type">BaseModel</span>):
-    <span class="cm">"""Grows as it passes through the DAG."""</span>
-
-    <span class="cm"># ── Step 1: Raw input</span>
     user_question: <span class="type">str</span> | <span class="type">None</span>
-
-    <span class="cm"># ── Step 2: Intent classification</span>
     intent: <span class="type">IntentClassification</span> | <span class="type">None</span>
-
-    <span class="cm"># ── Step 3: Slice planning</span>
-    slice_plan: <span class="type">LookupSlicePlan</span>
-              | <span class="type">AnalyticsSlicePlan</span> | <span class="type">None</span>
-
-    <span class="cm"># ── Step 4: Execution results</span>
+    slice_plan: <span class="type">LookupSlicePlan</span> | <span class="type">AnalyticsSlicePlan</span> | <span class="type">None</span>
     dataset_refs: <span class="type">dict</span>[<span class="type">str</span>, <span class="type">dict</span>]
-    <span class="cm"># ↑ slice_id → {template, sql, params,</span>
-    <span class="cm">#   row_count, data_rows, trend, ...}</span>
-
-    <span class="cm"># ── Step 5: Calculations</span>
     calculation_results: <span class="type">dict</span> | <span class="type">None</span>
-    <span class="cm"># ↑ lift, elasticity, cannibalization</span>
-
-    <span class="cm"># ── Step 6: Reasoner</span>
     reasoner_package: <span class="type">ReasonerPackage</span> | <span class="type">None</span>
     reasoner_output: <span class="type">ReasonerOutput</span> | <span class="type">None</span>
-
-    <span class="cm"># ── Accumulated context</span>
     caveats: <span class="type">list</span>[<span class="type">str</span>]
     execution_errors: <span class="type">list</span>[<span class="type">dict</span>]
-    validation_flags: <span class="type">list</span>[<span class="type">dict</span>]
-      </div>
+    validation_flags: <span class="type">list</span>[<span class="type">dict</span>]</div>
     </div>
   </div>
 </section>
@@ -893,7 +882,7 @@
      SLIDE 7 — THE SEMANTIC REGISTRY
      ═══════════════════════════════════════════════════════ -->
 <section class="slide slide--semi-compact" data-slide="7">
-  <div class="slide-split" style="gap:40px;">
+  <div class="slide-split">
     <div class="slide-split-left">
       <div class="slide-eyebrow reveal" style="color:var(--gold)">
         No hallucinated SQL
@@ -964,7 +953,7 @@
      SLIDE 8 — SQL TEMPLATES
      ═══════════════════════════════════════════════════════ -->
 <section class="slide slide--semi-compact" data-slide="8">
-  <div class="slide-split" style="gap:40px;">
+  <div class="slide-split">
     <div class="slide-split-left">
       <div class="slide-eyebrow reveal" style="color:var(--ember)">
         Templated, not generated
@@ -1153,7 +1142,7 @@
   </p>
 
   <!-- What the reasoner receives -->
-  <div class="reveal reveal-d3" style="display:grid;grid-template-columns:1fr 1.5fr;gap:24px;max-width:1100px;">
+  <div class="slide-split slide-split--wide-right reveal reveal-d3">
 
     <!-- Left: inputs -->
     <div style="display:flex;flex-direction:column;gap:8px;">
@@ -1240,7 +1229,7 @@
     One question. Six slices. <em>Real answers.</em>
   </h2>
 
-  <div class="reveal reveal-d2" style="display:grid;grid-template-columns:1fr 1.6fr;gap:24px;max-width:1100px;">
+  <div class="slide-split slide-split--wide-right reveal reveal-d2">
 
     <!-- Left: The question -->
     <div style="display:flex;flex-direction:column;gap:14px;">
